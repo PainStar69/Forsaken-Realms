@@ -30,6 +30,10 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
 
+        float _speed = moveInput.sqrMagnitude;
+
+        _anim.SetFloat("Speed", _speed);
+
         if (moveInput != Vector2.zero)
         {
             _anim.SetFloat("XInput", moveInput.x);
