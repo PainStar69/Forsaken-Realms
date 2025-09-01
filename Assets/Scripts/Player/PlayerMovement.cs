@@ -5,13 +5,20 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Float's")]
     [SerializeField] private float moveSpeed = 5f;
+
+    [Header("Component's")]
     private Rigidbody2D rb;
+    private Animator _anim;
+
+    [Header("Vector's")]
     private Vector2 moveInput;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        _anim = GetComponent<Animator>();
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -22,5 +29,11 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
+
+        if (moveInput != Vector2.zero)
+        {
+            _anim.SetFloat("XInput", moveInput.x);
+            _anim.SetFloat("YInput", moveInput.y);
+        }
     }
 }
