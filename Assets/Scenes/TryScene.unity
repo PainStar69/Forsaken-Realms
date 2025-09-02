@@ -187,17 +187,13 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.37512982
       objectReference: {fileID: 0}
-    - target: {fileID: 902091371050242403, guid: 700a011d77408b24d980a25a692860fc, type: 3}
-      propertyPath: m_SpriteSortPoint
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1819319613444572173, guid: 700a011d77408b24d980a25a692860fc, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3375193907061932970, guid: 700a011d77408b24d980a25a692860fc, type: 3}
-      propertyPath: m_Constraints
-      value: 4
+    - target: {fileID: 8946797000869908631, guid: 700a011d77408b24d980a25a692860fc, type: 3}
+      propertyPath: moveSpeed
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
