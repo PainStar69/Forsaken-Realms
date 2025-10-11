@@ -11278,8 +11278,8 @@ MonoBehaviour:
   m_LightType: 4
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.3443396, g: 0.7081711, b: 1, a: 1}
+  m_Intensity: 0.2
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -11444,8 +11444,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6775182932655151974, guid: d1a6d8b3add0cc94d8033b9d0c9378dc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1703182703}
   m_SourcePrefab: {fileID: 100100000, guid: d1a6d8b3add0cc94d8033b9d0c9378dc, type: 3}
+--- !u!1 &888061507 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6775182932655151974, guid: d1a6d8b3add0cc94d8033b9d0c9378dc, type: 3}
+  m_PrefabInstance: {fileID: 888061506}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1046665408 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7169685245677555527, guid: 887171785ae225e45aee152ffda76d3c, type: 3}
@@ -11581,6 +11589,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3449550347560317981, guid: d1a6d8b3add0cc94d8033b9d0c9378dc, type: 3}
   m_PrefabInstance: {fileID: 888061506}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1703182703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888061507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1.71
+  m_LightVolumeIntensity: 1
+  m_LightVolumeIntensityEnabled: 0
+  m_ApplyToSortingLayers: 00000000f5a12b7171d830df3504627d
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensity: 0.75
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 2.17
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1001 &1960932691
 PrefabInstance:
   m_ObjectHideFlags: 0
