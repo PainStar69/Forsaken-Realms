@@ -2700,14 +2700,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeFour
       objectReference: {fileID: 0}
-    - target: {fileID: 2105052300473597762, guid: d64020f07b6604b4f9352f4077aa2109, type: 3}
-      propertyPath: duration
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 2105052300473597762, guid: d64020f07b6604b4f9352f4077aa2109, type: 3}
-      propertyPath: intensity
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 6220161990908856858, guid: d64020f07b6604b4f9352f4077aa2109, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.73887783
