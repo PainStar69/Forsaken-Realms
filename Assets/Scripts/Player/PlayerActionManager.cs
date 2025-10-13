@@ -72,14 +72,11 @@ public class PlayerActionManager : MonoBehaviour
 
     public void DetectTreeInFront()
     {
-        // ýþýnýn baþlangýç noktasý karakterin merkezinden deðil, bakýþ yönünde biraz ileriden baþlýyor
-        Vector2 rayOrigin = (Vector2)transform.position + _lookDirection * 0.3f;
+        Vector2 _rayOrigin = (Vector2)transform.position + _lookDirection * 0.3f;
 
-        // Ray çiz
-        RaycastHit2D _hit = Physics2D.Raycast(rayOrigin, _lookDirection, _detectDistance, _treeLayer);
+        RaycastHit2D _hit = Physics2D.Raycast(_rayOrigin, _lookDirection, _detectDistance, _treeLayer);
 
-        // Debug için (Unity Scene’de görmen için)
-        Debug.DrawRay(rayOrigin, _lookDirection * _detectDistance, Color.red, 0.1f);
+        Debug.DrawRay(_rayOrigin, _lookDirection * _detectDistance, Color.red, 0.1f);
 
         if (_hit.collider != null && _hit.collider.CompareTag("Tree"))
         {
