@@ -2740,6 +2740,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7154215889317500495, guid: d64020f07b6604b4f9352f4077aa2109, type: 3}
+      propertyPath: m_Size.x
+      value: 0.5697225
+      objectReference: {fileID: 0}
+    - target: {fileID: 7154215889317500495, guid: d64020f07b6604b4f9352f4077aa2109, type: 3}
+      propertyPath: m_Size.y
+      value: 0.65633005
+      objectReference: {fileID: 0}
+    - target: {fileID: 7154215889317500495, guid: d64020f07b6604b4f9352f4077aa2109, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0090660155
+      objectReference: {fileID: 0}
+    - target: {fileID: 7154215889317500495, guid: d64020f07b6604b4f9352f4077aa2109, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.000101834536
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3328,6 +3344,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3580582393694378802, guid: e1bff4c4833ef57459dd240a2493a304, type: 3}
+      propertyPath: m_Size.x
+      value: 0.25148478
+      objectReference: {fileID: 0}
+    - target: {fileID: 3580582393694378802, guid: e1bff4c4833ef57459dd240a2493a304, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5295868
+      objectReference: {fileID: 0}
+    - target: {fileID: 3580582393694378802, guid: e1bff4c4833ef57459dd240a2493a304, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.006154105
+      objectReference: {fileID: 0}
+    - target: {fileID: 3580582393694378802, guid: e1bff4c4833ef57459dd240a2493a304, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.11251043
+      objectReference: {fileID: 0}
     - target: {fileID: 4098641232463521078, guid: e1bff4c4833ef57459dd240a2493a304, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.1904793
@@ -3379,6 +3411,14 @@ PrefabInstance:
     - target: {fileID: 5811612538542566471, guid: e1bff4c4833ef57459dd240a2493a304, type: 3}
       propertyPath: m_Name
       value: TreeFourSmall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512376478016286152, guid: e1bff4c4833ef57459dd240a2493a304, type: 3}
+      propertyPath: m_Size.y
+      value: 0.3651553
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512376478016286152, guid: e1bff4c4833ef57459dd240a2493a304, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.17202885
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
