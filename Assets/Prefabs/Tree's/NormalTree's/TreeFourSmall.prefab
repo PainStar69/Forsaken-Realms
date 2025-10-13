@@ -176,8 +176,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cf267fad9471634886b1eefcc60bee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intensity: 0.1
-  duration: 0.5
+  intensity: 0.07
+  duration: 0.05
 --- !u!61 &6512376478016286152
 BoxCollider2D:
   m_ObjectHideFlags: 0
