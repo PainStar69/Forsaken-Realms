@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   intensity: 0.1
-  duration: 0.01
+  duration: 0.05
 --- !u!61 &3376431346990854960
 BoxCollider2D:
   m_ObjectHideFlags: 0

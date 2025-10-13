@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Shake : MonoBehaviour
@@ -8,7 +7,8 @@ public class Shake : MonoBehaviour
     public float duration = 0.5f;    // Titreme süresi
 
     private Vector3 originalPos;
-    private float shakeTime = 0f;
+    private float currentShakeTime = 0f;
+    private bool isShaking = false;
 
     void Start()
     {
@@ -17,24 +17,33 @@ public class Shake : MonoBehaviour
 
     public void ShakeStart()
     {
-        shakeTime = duration; // Titremeyi baþlat
+        // Titreme süresini resetle
+        currentShakeTime = duration;
+
+        // Eðer zaten titremiyorsa, baþlat
+        if (!isShaking)
+            StartCoroutine(ShakeCoroutine());
     }
 
-    void Update()
+    private IEnumerator ShakeCoroutine()
     {
-        if (shakeTime > 0)
+        isShaking = true;
+
+        while (currentShakeTime > 0f)
         {
-            // Rastgele X ve Y ofset
+            // Her frame yeni pozisyon üret
             float offsetX = Random.Range(-intensity, intensity);
             float offsetY = Random.Range(-intensity, intensity);
+
             transform.localPosition = originalPos + new Vector3(offsetX, offsetY, 0f);
 
-            shakeTime -= Time.deltaTime;
+            // Süreyi azalt
+            currentShakeTime -= Time.deltaTime;
+            yield return null;
         }
-        else
-        {
-            // Titreme bittiðinde pozisyonu geri al
-            transform.localPosition = originalPos;
-        }
+
+        // Bitince pozisyonu sýfýrla
+        transform.localPosition = originalPos;
+        isShaking = false;
     }
 }
