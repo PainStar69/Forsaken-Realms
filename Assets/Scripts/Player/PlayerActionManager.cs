@@ -81,6 +81,9 @@ public class PlayerActionManager : MonoBehaviour
         if (_hit.collider != null && _hit.collider.CompareTag("Tree"))
         {
             _hit.collider.transform.parent.gameObject.GetComponent<Shake>().ShakeStart();
+
+            _hit.collider.transform.parent.gameObject.GetComponent<TreeManager>().TreeTakeDamage(1);
+
             _audioSource.clip = _clips[0];
             _audioSource.Play();
         }
