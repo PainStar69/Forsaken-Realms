@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 4098641232463521078}
   - component: {fileID: 2699560259953928253}
   - component: {fileID: 4827709499698350134}
-  - component: {fileID: 3994538204531827346}
+  - component: {fileID: 3941600378128212401}
   - component: {fileID: 6512376478016286152}
   m_Layer: 0
   m_Name: TreeFourSmall
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _intensity: 0.1
   _duration: 0.05
---- !u!114 &3994538204531827346
+--- !u!114 &3941600378128212401
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -193,6 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dropItems:
   - {fileID: 8541582185099420305, guid: 989e95338fbea854ebd650d0c4cc7dd7, type: 3}
+  - {fileID: 2734443614646281964, guid: aa8cb5ac320c0fb4b829f5a79b2998a3, type: 3}
   _TreeHealth: 3
   _dropCount: 15
   _spread: 2

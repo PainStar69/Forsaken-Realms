@@ -15,12 +15,13 @@ public class PlayerActionManager : MonoBehaviour
 
     [Header("Bool's")]
     public bool _axe;
+    public bool _pickaxe;
 
     [Header("Float's")]
     public float _detectDistance = 1f;
 
     [Header("LayerMask's")]
-    public LayerMask _treeLayer;
+    public LayerMask _objectLayer;
 
     [Header("Vector's")]
     private Vector2 _lookDirection = Vector2.down;
@@ -68,13 +69,18 @@ public class PlayerActionManager : MonoBehaviour
             _anim.SetTrigger("Axe");
             PlayerMovement.moveSpeed = 0;
         }
+        else if(_pickaxe)
+        {
+            _anim.SetTrigger("Pickaxe");
+            PlayerMovement.moveSpeed = 0;
+        }
     }
 
     public void DetectTreeInFront()
     {
         Vector2 _rayOrigin = (Vector2)transform.position + _lookDirection * 0.3f;
 
-        RaycastHit2D _hit = Physics2D.Raycast(_rayOrigin, _lookDirection, _detectDistance, _treeLayer);
+        RaycastHit2D _hit = Physics2D.Raycast(_rayOrigin, _lookDirection, _detectDistance, _objectLayer);
 
         Debug.DrawRay(_rayOrigin, _lookDirection * _detectDistance, Color.red, 0.1f);
 
@@ -82,9 +88,18 @@ public class PlayerActionManager : MonoBehaviour
         {
             _hit.collider.transform.parent.gameObject.GetComponent<Shake>().ShakeStart();
 
-            _hit.collider.transform.parent.gameObject.GetComponent<TreeManager>().TreeTakeDamage(1);
+            _hit.collider.transform.parent.gameObject.GetComponent<ObjectManager>().ObjectTakeDamage(1);
 
             _audioSource.clip = _clips[0];
+            _audioSource.Play();
+        }
+        else if(_hit.collider != null && _hit.collider.CompareTag("Rock"))
+        {
+            _hit.collider.transform.parent.gameObject.GetComponent<Shake>().ShakeStart();
+
+            _hit.collider.transform.parent.gameObject.GetComponent<ObjectManager>().ObjectTakeDamage(1);
+
+            _audioSource.clip = _clips[1];
             _audioSource.Play();
         }
     }

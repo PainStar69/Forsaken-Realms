@@ -189,9 +189,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _clips:
   - {fileID: 8300000, guid: 49bf1adcee0a4f64583b0e931f953a58, type: 3}
-  _axe: 1
+  - {fileID: 8300000, guid: 0a36d5b6566593d48bef614ba4f0f2f1, type: 3}
+  _axe: 0
+  _pickaxe: 1
   _detectDistance: 1
-  _treeLayer:
+  _objectLayer:
     serializedVersion: 2
     m_Bits: 8
 --- !u!114 &5181089076749875283

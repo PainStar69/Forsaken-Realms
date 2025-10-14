@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreeManager : MonoBehaviour
+public class ObjectManager : MonoBehaviour
 {
     [Header("GameObject's")]
     public GameObject[] _dropItems;
 
     [Header("Int's")]
-    [SerializeField] int _TreeHealth = 3;
+    [SerializeField] int _objectHealth = 3;
     [SerializeField] int _dropCount;
 
     [Header("Float's")]
@@ -16,7 +16,7 @@ public class TreeManager : MonoBehaviour
 
     void Update()
     {
-        if(_TreeHealth <= 0)
+        if(_objectHealth <= 0)
         {
             DropItem();
         }
@@ -39,8 +39,8 @@ public class TreeManager : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void TreeTakeDamage(int _damage)
+    public void ObjectTakeDamage(int _damage)
     {
-        _TreeHealth -= _damage;
+        _objectHealth -= _damage;
     }
 }
