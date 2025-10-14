@@ -76,7 +76,7 @@ public class PlayerActionManager : MonoBehaviour
         }
     }
 
-    public void DetectTreeInFront()
+    public void DetectObjectInFront()
     {
         Vector2 _rayOrigin = (Vector2)transform.position + _lookDirection * 0.3f;
 
@@ -84,7 +84,7 @@ public class PlayerActionManager : MonoBehaviour
 
         Debug.DrawRay(_rayOrigin, _lookDirection * _detectDistance, Color.red, 0.1f);
 
-        if (_hit.collider != null && _hit.collider.CompareTag("Tree"))
+        if (_hit.collider != null && _hit.collider.CompareTag("Tree") && _axe == true)
         {
             _hit.collider.transform.parent.gameObject.GetComponent<Shake>().ShakeStart();
 
@@ -93,7 +93,7 @@ public class PlayerActionManager : MonoBehaviour
             _audioSource.clip = _clips[0];
             _audioSource.Play();
         }
-        else if(_hit.collider != null && _hit.collider.CompareTag("Rock"))
+        else if(_hit.collider != null && _hit.collider.CompareTag("Rock") && _pickaxe == true)
         {
             _hit.collider.transform.parent.gameObject.GetComponent<Shake>().ShakeStart();
 
