@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6154077087621342277}
   - component: {fileID: 6099451146345722737}
   m_Layer: 0
-  m_Name: Outdoor_Decor_28
+  m_Name: RockSmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,9 +116,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dropItems:
   - {fileID: 6993362610743442951, guid: 8b10c218e0daab945890b52736dd51cc, type: 3}
+  _breakObject: {fileID: 888589415016576328}
   _objectHealth: 1
   _dropCount: 1
   _spread: 2
+  _destroyTime: 0
+  _animationActive: 0
 --- !u!61 &6099451146345722737
 BoxCollider2D:
   m_ObjectHideFlags: 0
