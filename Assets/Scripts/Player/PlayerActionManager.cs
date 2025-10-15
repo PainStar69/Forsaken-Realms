@@ -35,21 +35,6 @@ public class PlayerActionManager : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
     }
 
-    //Remove
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            _axe = true;
-            _pickaxe = false;
-        }
-        else if(Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            _pickaxe = true;
-            _axe = false;
-        }
-    }
-
     private void OnEnable()
     {
         _inputAction.Enable();
@@ -129,12 +114,18 @@ public class PlayerActionManager : MonoBehaviour
 
         if (_hit.collider != null && _hit.collider.CompareTag("Tree") && _axe == true)
         {
+            ParticleSystem _treeParticle = _hit.collider.transform.parent.Find("TreeParticle").gameObject.GetComponent<ParticleSystem>();
+
             _hit.collider.transform.parent.gameObject.GetComponent<Shake>().ShakeStart();
 
             _hit.collider.transform.parent.Find("TreeChop").gameObject.GetComponent<ObjectManager>().ObjectTakeDamage(1);
+            _treeParticle.Play();
 
-            if(_hit.collider.transform.parent.Find("TreeChop").gameObject.GetComponent<ObjectManager>()._objectHealth <= 0)
-            _hit.collider.transform.parent.Find("TreeChop").gameObject.GetComponent<Animator>().SetTrigger("Chop");
+            if (_hit.collider.transform.parent.Find("TreeChop").gameObject.GetComponent<ObjectManager>()._objectHealth <= 0)
+            {
+                Destroy(_treeParticle.gameObject);
+                _hit.collider.transform.parent.Find("TreeChop").gameObject.GetComponent<Animator>().SetTrigger("Chop"); 
+            }
 
             _audioSource.clip = _clips[0];
             _audioSource.Play();
