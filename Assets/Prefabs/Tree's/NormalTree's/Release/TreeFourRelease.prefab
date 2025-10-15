@@ -379,7 +379,7 @@ MonoBehaviour:
   - {fileID: 8541582185099420305, guid: 989e95338fbea854ebd650d0c4cc7dd7, type: 3}
   _breakObject: {fileID: 6061283813403055659}
   _objectHealth: 3
-  _dropCount: 7
+  _dropCount: 4
   _spread: 1.5
   _destroyTime: 0
   _animationActive: 1
