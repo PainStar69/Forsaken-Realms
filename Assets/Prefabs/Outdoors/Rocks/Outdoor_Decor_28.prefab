@@ -116,8 +116,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dropItems:
   - {fileID: 6993362610743442951, guid: 8b10c218e0daab945890b52736dd51cc, type: 3}
-  _objectHealth: 4
-  _dropCount: 9
+  _objectHealth: 1
+  _dropCount: 1
   _spread: 2
 --- !u!61 &6099451146345722737
 BoxCollider2D:
