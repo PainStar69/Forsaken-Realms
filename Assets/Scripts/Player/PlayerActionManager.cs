@@ -38,9 +38,12 @@ public class PlayerActionManager : MonoBehaviour
     private void OnEnable()
     {
         _inputAction.Enable();
+
         _inputAction.Player.Action.performed += OnLeftClick;
+
         _inputAction.Player.Inventory.performed += OnAlphaOneClick;
         _inputAction.Player.Inventory.performed += OnAlphaTwoClick;
+
         _inputAction.Player.Move.performed += OnMove;
         _inputAction.Player.Move.canceled += OnMoveCanceled;
     }
@@ -48,13 +51,17 @@ public class PlayerActionManager : MonoBehaviour
     private void OnDisable()
     {
         _inputAction.Player.Action.performed -= OnLeftClick;
+
         _inputAction.Player.Inventory.performed -= OnAlphaOneClick;
         _inputAction.Player.Inventory.performed -= OnAlphaTwoClick;
+
         _inputAction.Player.Move.performed -= OnMove;
         _inputAction.Player.Move.canceled -= OnMoveCanceled;
+
         _inputAction.Disable();
     }
 
+    // Movement Input
     private void OnMove(InputAction.CallbackContext context)
     {
         _moveInput = context.ReadValue<Vector2>();
@@ -67,6 +74,7 @@ public class PlayerActionManager : MonoBehaviour
         _moveInput = Vector2.zero;
     }
 
+    // Player Actions
     private void OnLeftClick(InputAction.CallbackContext _ctx)
     {
         if (_axe)
@@ -74,7 +82,7 @@ public class PlayerActionManager : MonoBehaviour
             _anim.SetTrigger("Axe");
             PlayerMovement.moveSpeed = 0;
         }
-        else if(_pickaxe)
+        else if (_pickaxe)
         {
             _anim.SetTrigger("Pickaxe");
             PlayerMovement.moveSpeed = 0;
@@ -104,6 +112,7 @@ public class PlayerActionManager : MonoBehaviour
         }
     }
 
+    // Object Detection
     public void DetectObjectInFront()
     {
         Vector2 _rayOrigin = (Vector2)transform.position + _lookDirection * 0.3f;
@@ -112,40 +121,70 @@ public class PlayerActionManager : MonoBehaviour
 
         Debug.DrawRay(_rayOrigin, _lookDirection * _detectDistance, Color.red, 0.1f);
 
-        if (_hit.collider != null && _hit.collider.CompareTag("Tree") && _axe == true)
+        if (_hit.collider != null)
         {
-            ParticleSystem _treeParticle = _hit.collider.transform.parent.Find("TreeParticle").gameObject.GetComponent<ParticleSystem>();
-
-            _hit.collider.transform.parent.gameObject.GetComponent<Shake>().ShakeStart();
-
-            if (_hit.collider.transform.parent.Find("TreeChop").gameObject.GetComponent<ObjectManager>()._objectHealth <= 1)
+            if (_hit.collider.CompareTag("Tree") && _axe)
             {
-                Destroy(_treeParticle.gameObject);
+                HandleTreeHit(_hit);
             }
-            else
+            else if (_hit.collider.CompareTag("Rock") && _pickaxe)
             {
-                _treeParticle.Play();
+                HandleRockHit(_hit);
             }
-
-            _hit.collider.transform.parent.Find("TreeChop").gameObject.GetComponent<ObjectManager>().ObjectTakeDamage(1);
-
-
-            if (_hit.collider.transform.parent.Find("TreeChop").gameObject.GetComponent<ObjectManager>()._objectHealth <= 0)
-            {
-                _hit.collider.transform.parent.Find("TreeChop").gameObject.GetComponent<Animator>().SetTrigger("Chop"); 
-            }
-
-            _audioSource.clip = _clips[0];
-            _audioSource.Play();
         }
-        else if(_hit.collider != null && _hit.collider.CompareTag("Rock") && _pickaxe == true)
+    }
+
+    // Private helpers
+    private void HandleTreeHit(RaycastHit2D _hit)
+    {
+        var parent = _hit.collider.transform.parent;
+
+        ParticleSystem _treeParticle = parent.Find("TreeParticle").GetComponent<ParticleSystem>();
+        parent.GetComponent<Shake>().ShakeStart();
+
+        var treeChop = parent.Find("TreeChop").GetComponent<ObjectManager>();
+
+        if (treeChop._objectHealth <= 1)
         {
-            _hit.collider.transform.parent.gameObject.GetComponent<Shake>().ShakeStart();
-
-            _hit.collider.transform.parent.gameObject.GetComponent<ObjectManager>().ObjectTakeDamage(1);
-
-            _audioSource.clip = _clips[1];
-            _audioSource.Play();
+            Destroy(_treeParticle.gameObject);
         }
+        else
+        {
+            _treeParticle.Play();
+        }
+
+        treeChop.ObjectTakeDamage(1);
+
+        if (treeChop._objectHealth <= 0)
+        {
+            treeChop.GetComponent<Animator>().SetTrigger("Chop");
+        }
+
+        _audioSource.clip = _clips[0];
+        _audioSource.Play();
+    }
+
+    private void HandleRockHit(RaycastHit2D _hit)
+    {
+        var parent = _hit.collider.transform.parent;
+
+        parent.GetComponent<Shake>().ShakeStart();
+
+        ParticleSystem _rockParticle = parent.Find("RockParticle").GetComponent<ParticleSystem>();
+        var rockManager = parent.GetComponent<ObjectManager>();
+
+        if (rockManager._objectHealth <= 1)
+        {
+            Destroy(_rockParticle.gameObject);
+        }
+        else
+        {
+            _rockParticle.Play();
+        }
+
+        rockManager.ObjectTakeDamage(1);
+
+        _audioSource.clip = _clips[1];
+        _audioSource.Play();
     }
 }
