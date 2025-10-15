@@ -88,7 +88,10 @@ public class PlayerActionManager : MonoBehaviour
         {
             _hit.collider.transform.parent.gameObject.GetComponent<Shake>().ShakeStart();
 
-            _hit.collider.transform.parent.gameObject.GetComponent<ObjectManager>().ObjectTakeDamage(1);
+            _hit.collider.transform.parent.Find("TreeChop").gameObject.GetComponent<ObjectManager>().ObjectTakeDamage(1);
+
+            if(_hit.collider.transform.parent.Find("TreeChop").gameObject.GetComponent<ObjectManager>()._objectHealth <= 0)
+            _hit.collider.transform.parent.Find("TreeChop").gameObject.GetComponent<Animator>().SetTrigger("Chop");
 
             _audioSource.clip = _clips[0];
             _audioSource.Play();

@@ -1,24 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ObjectManager : MonoBehaviour
 {
     [Header("GameObject's")]
     public GameObject[] _dropItems;
+    public GameObject _breakObject;
 
     [Header("Int's")]
-    [SerializeField] int _objectHealth = 3;
+    public int _objectHealth = 3;
     [SerializeField] int _dropCount;
 
     [Header("Float's")]
     [SerializeField] private float _spread;
+    [SerializeField] private float _destroyTime;
+
+    [Header("Bool's")]
+    [SerializeField] private bool _animationActive;
+    private bool _animActive;
 
     void Update()
     {
         if(_objectHealth <= 0)
         {
-            DropItem();
+            if (!_animationActive)
+                DropItem();
+            else
+                _animActive = true;
         }
     }
 
@@ -27,7 +37,7 @@ public class ObjectManager : MonoBehaviour
         while(_dropCount > 0)
         {
             _dropCount -= 1;
-            Vector3 _pos = transform.position;
+            Vector3 _pos = _breakObject.transform.position;
 
             _pos.x += _spread * UnityEngine.Random.value - _spread / 2;
             _pos.y += _spread * UnityEngine.Random.value - _spread / 2;
@@ -36,7 +46,27 @@ public class ObjectManager : MonoBehaviour
             _gameObject.transform.position = _pos;
         }
 
-        Destroy(gameObject);
+        Destroy(_breakObject, _destroyTime);
+    }
+
+    public void AnimationDropItem()
+    {
+        if (_animActive == true)
+        {
+            while (_dropCount > 0)
+            {
+                _dropCount -= 1;
+                Vector3 _pos = _breakObject.transform.position;
+
+                _pos.x += _spread * UnityEngine.Random.value - _spread / 2;
+                _pos.y += _spread * UnityEngine.Random.value - _spread / 2;
+
+                GameObject _gameObject = Instantiate(_dropItems[0]);
+                _gameObject.transform.position = _pos;
+            }
+
+            Destroy(_breakObject);
+        }
     }
 
     public void ObjectTakeDamage(int _damage)
