@@ -118,13 +118,17 @@ public class PlayerActionManager : MonoBehaviour
 
             _hit.collider.transform.parent.gameObject.GetComponent<Shake>().ShakeStart();
 
-            _hit.collider.transform.parent.Find("TreeChop").gameObject.GetComponent<ObjectManager>().ObjectTakeDamage(1);
-            _treeParticle.Play();
-
-            if(_hit.collider.transform.parent.Find("TreeChop").gameObject.GetComponent<ObjectManager>()._objectHealth < 1)
+            if (_hit.collider.transform.parent.Find("TreeChop").gameObject.GetComponent<ObjectManager>()._objectHealth <= 1)
             {
                 Destroy(_treeParticle.gameObject);
             }
+            else
+            {
+                _treeParticle.Play();
+            }
+
+            _hit.collider.transform.parent.Find("TreeChop").gameObject.GetComponent<ObjectManager>().ObjectTakeDamage(1);
+
 
             if (_hit.collider.transform.parent.Find("TreeChop").gameObject.GetComponent<ObjectManager>()._objectHealth <= 0)
             {
