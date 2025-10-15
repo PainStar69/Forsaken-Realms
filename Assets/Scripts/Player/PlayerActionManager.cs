@@ -1,3 +1,4 @@
+using UnityEditor.ShaderGraph;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -34,10 +35,27 @@ public class PlayerActionManager : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
     }
 
+    //Remove
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            _axe = true;
+            _pickaxe = false;
+        }
+        else if(Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            _pickaxe = true;
+            _axe = false;
+        }
+    }
+
     private void OnEnable()
     {
         _inputAction.Enable();
         _inputAction.Player.Action.performed += OnLeftClick;
+        _inputAction.Player.Inventory.performed += OnAlphaOneClick;
+        _inputAction.Player.Inventory.performed += OnAlphaTwoClick;
         _inputAction.Player.Move.performed += OnMove;
         _inputAction.Player.Move.canceled += OnMoveCanceled;
     }
@@ -45,6 +63,8 @@ public class PlayerActionManager : MonoBehaviour
     private void OnDisable()
     {
         _inputAction.Player.Action.performed -= OnLeftClick;
+        _inputAction.Player.Inventory.performed -= OnAlphaOneClick;
+        _inputAction.Player.Inventory.performed -= OnAlphaTwoClick;
         _inputAction.Player.Move.performed -= OnMove;
         _inputAction.Player.Move.canceled -= OnMoveCanceled;
         _inputAction.Disable();
@@ -73,6 +93,29 @@ public class PlayerActionManager : MonoBehaviour
         {
             _anim.SetTrigger("Pickaxe");
             PlayerMovement.moveSpeed = 0;
+        }
+    }
+
+    //Job: Changed and Remove
+    private void OnAlphaOneClick(InputAction.CallbackContext _ctx)
+    {
+        var _control = _ctx.control;
+
+        if (_control.name == "1")
+        {
+            _axe = true;
+            _pickaxe = false;
+        }
+    }
+
+    private void OnAlphaTwoClick(InputAction.CallbackContext _ctx)
+    {
+        var _control = _ctx.control;
+
+        if (_control.name == "2")
+        {
+            _pickaxe = true;
+            _axe = false;
         }
     }
 
