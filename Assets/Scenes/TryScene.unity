@@ -3393,10 +3393,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4056955733791604441, guid: ec277fcf326444841a36ac3dc12378f8, type: 3}
-      propertyPath: simulationSpeed
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 4831754778259350846, guid: ec277fcf326444841a36ac3dc12378f8, type: 3}
       propertyPath: m_Name
       value: TreeFourRelease
