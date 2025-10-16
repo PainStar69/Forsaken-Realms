@@ -14,6 +14,9 @@ public class PlayerActionManager : MonoBehaviour
     [Header("MP3")]
     public AudioClip[] _clips;
 
+    [Header("Gameobject's")]
+    public ParticleSystem _rockParticle;
+
     [Header("Bool's")]
     public bool _axe;
     public bool _pickaxe;
@@ -170,16 +173,16 @@ public class PlayerActionManager : MonoBehaviour
 
         parent.GetComponent<Shake>().ShakeStart();
 
-        ParticleSystem _rockParticle = parent.Find("RockParticle").GetComponent<ParticleSystem>();
         var rockManager = parent.GetComponent<ObjectManager>();
 
-        if (rockManager._objectHealth <= 1)
+        if (rockManager._objectHealth <= 0)
         {
+            Instantiate(_rockParticle.gameObject, _hit.collider.gameObject.transform.position, Quaternion.identity);
             Destroy(_rockParticle.gameObject);
         }
         else
         {
-            _rockParticle.Play();
+            Instantiate(_rockParticle.gameObject, _hit.collider.gameObject.transform.position, Quaternion.identity);
         }
 
         rockManager.ObjectTakeDamage(1);

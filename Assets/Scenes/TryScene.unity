@@ -404,14 +404,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 9067891662362615547, guid: 700a011d77408b24d980a25a692860fc, type: 3}
-      propertyPath: _axe
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9067891662362615547, guid: 700a011d77408b24d980a25a692860fc, type: 3}
-      propertyPath: _pickaxe
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
