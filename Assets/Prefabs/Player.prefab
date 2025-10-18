@@ -182,13 +182,14 @@ GameObject:
   - component: {fileID: 8946797000869908631}
   - component: {fileID: 5505470166306857415}
   - component: {fileID: 9067891662362615547}
+  - component: {fileID: 8259615716386954709}
   - component: {fileID: 5181089076749875283}
   - component: {fileID: 7465658940018616685}
   - component: {fileID: 343944630140109711}
   - component: {fileID: 720273294462058915}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -335,6 +336,21 @@ MonoBehaviour:
   _objectLayer:
     serializedVersion: 2
     m_Bits: 8
+--- !u!114 &8259615716386954709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819319613444572173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53ef34707589288489a34ec4f766af98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pocketSlots: 18
+  mainSlots: 9
+  _items: []
 --- !u!114 &5181089076749875283
 MonoBehaviour:
   m_ObjectHideFlags: 0
