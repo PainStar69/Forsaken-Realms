@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ef34707589288489a34ec4f766af98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pocketSlots: 18
+  pocketSlots: 9
   mainSlots: 9
   _items: []
 --- !u!114 &5181089076749875283
