@@ -326,11 +326,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f26d18dac5bb23429359a0a7f2cb9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _inventoryUI: {fileID: 0}
   _clips:
   - {fileID: 8300000, guid: 49bf1adcee0a4f64583b0e931f953a58, type: 3}
   - {fileID: 8300000, guid: 0a36d5b6566593d48bef614ba4f0f2f1, type: 3}
   _rockParticle: {fileID: 2928535341843340010, guid: 63ba3c72d82b83c4594122e691221cf8, type: 3}
-  _axe: 1
+  _axe: 0
   _pickaxe: 0
   _detectDistance: 1
   _objectLayer:

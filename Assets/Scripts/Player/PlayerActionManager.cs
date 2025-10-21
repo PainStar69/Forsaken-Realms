@@ -1,4 +1,4 @@
-using UnityEditor.ShaderGraph;
+﻿using UnityEditor.ShaderGraph;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,6 +10,7 @@ public class PlayerActionManager : MonoBehaviour
     [Header("Component's")]
     Animator _anim;
     AudioSource _audioSource;
+    public InventoryUI _inventoryUI;
 
     [Header("MP3")]
     public AudioClip[] _clips;
@@ -44,8 +45,7 @@ public class PlayerActionManager : MonoBehaviour
 
         _inputAction.Player.Action.performed += OnLeftClick;
 
-        _inputAction.Player.Inventory.performed += OnAlphaOneClick;
-        _inputAction.Player.Inventory.performed += OnAlphaTwoClick;
+        _inputAction.Player.Inventory.performed += OnAlphaButtonClick;
 
         _inputAction.Player.Move.performed += OnMove;
         _inputAction.Player.Move.canceled += OnMoveCanceled;
@@ -55,8 +55,7 @@ public class PlayerActionManager : MonoBehaviour
     {
         _inputAction.Player.Action.performed -= OnLeftClick;
 
-        _inputAction.Player.Inventory.performed -= OnAlphaOneClick;
-        _inputAction.Player.Inventory.performed -= OnAlphaTwoClick;
+        _inputAction.Player.Inventory.performed -= OnAlphaButtonClick;
 
         _inputAction.Player.Move.performed -= OnMove;
         _inputAction.Player.Move.canceled -= OnMoveCanceled;
@@ -93,25 +92,43 @@ public class PlayerActionManager : MonoBehaviour
     }
 
     //Job: Changed and Remove
-    private void OnAlphaOneClick(InputAction.CallbackContext _ctx)
+    private void OnAlphaButtonClick(InputAction.CallbackContext _ctx)
     {
         var _control = _ctx.control;
 
-        if (_control.name == "1")
+        int _slotIndex;
+        if (!int.TryParse(_control.name, out int num)) return;
+        _slotIndex = num - 1;
+
+        if (_slotIndex < 0 || _slotIndex >= _inventoryUI._slotParents.Count) return;
+
+        Transform slotTransform = _inventoryUI._slotParents[_slotIndex];
+
+        if (slotTransform.childCount > 0)
         {
-            _axe = true;
-            _pickaxe = false;
+            Transform _item = slotTransform.GetChild(0);
+            string _itemName = _item.name;
+
+            if (_itemName == "Axe")
+            {
+                _axe = true;
+                _pickaxe = false;
+            }
+            else if (_itemName == "Pickaxe")
+            {
+                _pickaxe = true;
+                _axe = false;
+            }
+            else
+            {
+                _axe = false;
+                _pickaxe = false;
+            }
         }
-    }
-
-    private void OnAlphaTwoClick(InputAction.CallbackContext _ctx)
-    {
-        var _control = _ctx.control;
-
-        if (_control.name == "2")
+        else
         {
-            _pickaxe = true;
             _axe = false;
+            _pickaxe = false;
         }
     }
 

@@ -18,7 +18,7 @@ public class InventorySlot
 public class Inventory : MonoBehaviour
 {
     public static Inventory Instance; // Tekil eriþim için
-    public int pocketSlots = 18;
+    public int pocketSlots = 9;
     public int mainSlots = 9;
 
     public List<InventorySlot> _items = new List<InventorySlot>();

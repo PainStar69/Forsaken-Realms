@@ -25,6 +25,7 @@ public class InventoryUI : MonoBehaviour
             {
                 GameObject itemUI = Instantiate(_itemPrefab, _slotParents[i]);
                 Image img = itemUI.GetComponent<Image>();
+                itemUI.name = _items[i]._item.name;
                 img.sprite = _items[i]._item._icon;
                 img.color = Color.white;
                 itemUI.transform.localPosition = Vector3.zero;
