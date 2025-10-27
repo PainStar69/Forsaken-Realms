@@ -182,6 +182,8 @@ public class PlayerActionManager : MonoBehaviour
                 Transform _item = slotTransform.GetChild(0);
                 string _itemName = _item.name;
 
+                Debug.Log(_itemName);
+
                 if (_itemName == "Axe")
                 {
                     _axe = true;
