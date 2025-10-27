@@ -10,12 +10,16 @@ public class InventorySlotUI : MonoBehaviour, IDropHandler
         GameObject _dropped = eventData.pointerDrag;
         if (_dropped == null) return;
 
+        GameObject _InventoryRecheck = GameObject.Find("Player");
+
         DraggableItem _draggableItem = _dropped.GetComponent<DraggableItem>();
         if (_draggableItem == null) return;
 
         if (transform.childCount == 0)
         {
             _draggableItem._parentAfterDrag = transform;
+
+            _InventoryRecheck.GetComponent<PlayerActionManager>().RecheckSlots();
         }
         else
         {
@@ -26,6 +30,8 @@ public class InventorySlotUI : MonoBehaviour, IDropHandler
 
             _existingItem.SetParent(_originalParent);
             _existingItem.localPosition = Vector3.zero;
+
+            _InventoryRecheck.GetComponent<PlayerActionManager>().RecheckSlots();
         }
     }
 }
