@@ -305,6 +305,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""StockInventory"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f86b743a-23f4-4c17-acec-db0a1485c475"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PlayerInput"",
+                    ""action"": ""StockInventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }

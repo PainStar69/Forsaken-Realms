@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -32,9 +32,23 @@ public class GameManager : MonoBehaviour
 
     private void InventoryOpenButtonClicked(InputAction.CallbackContext _ctx)
     {
-        Debug.Log("Button pressed!");
+        string _keyName = _ctx.control.name;
 
-        _inventoryPanelActive = !_inventoryPanelActive;
-        _InventoryPanel.SetActive(_inventoryPanelActive);
+        if (!_inventoryPanelActive)
+        {
+            if (_keyName == "e")
+            {
+                _inventoryPanelActive = true;
+                _InventoryPanel.SetActive(true);
+            }
+        }
+        else
+        {
+            if (_keyName == "e" || _keyName == "escape")
+            {
+                _inventoryPanelActive = false;
+                _InventoryPanel.SetActive(false);
+            }
+        }
     }
 }

@@ -9,7 +9,6 @@ public class InventoryUI : MonoBehaviour
     public GameObject _itemPrefab;
     public List<TMP_Text> _amountTexts;
 
-    // ItemData ile deðiþtirildi
     private Dictionary<ItemData, GameObject> _spawnedItems = new Dictionary<ItemData, GameObject>();
 
     public void RefreshUI(List<InventorySlot> _items)

@@ -91,19 +91,55 @@ public class PlayerActionManager : MonoBehaviour
         }
     }
 
-    //Job: Changed and Remove
+    private int _lastSelectedSlotIndex = -1;
+
     private void OnAlphaButtonClick(InputAction.CallbackContext _ctx)
     {
         var _control = _ctx.control;
 
-        int _slotIndex;
         if (!int.TryParse(_control.name, out int num)) return;
-        _slotIndex = num - 1;
+        int _slotIndex = num - 1;
 
         if (_slotIndex < 0 || _slotIndex >= _inventoryUI._slotParents.Count) return;
 
         Transform slotTransform = _inventoryUI._slotParents[_slotIndex];
 
+        // Eğer aynı slot tekrar tıklanıyorsa -> toggle: deselect et ve çık
+        if (_lastSelectedSlotIndex == _slotIndex)
+        {
+            Animator sameAnim = slotTransform.GetComponent<Animator>();
+            if (sameAnim != null)
+            {
+                sameAnim.SetTrigger("Deselect");
+            }
+
+            // istenirse aynı slot tekrar tıklanınca ekipman da kaldırılabilir:
+            _axe = false;
+            _pickaxe = false;
+
+            _lastSelectedSlotIndex = -1;
+            return;
+        }
+
+        // Farklı bir slot seçiliyorsa: önceki slotu deselect et
+        if (_lastSelectedSlotIndex >= 0 && _lastSelectedSlotIndex < _inventoryUI._slotParents.Count)
+        {
+            Transform lastSlotTransform = _inventoryUI._slotParents[_lastSelectedSlotIndex];
+            Animator lastAnimator = lastSlotTransform.GetComponent<Animator>();
+            if (lastAnimator != null)
+            {
+                lastAnimator.SetTrigger("Deselect");
+            }
+        }
+
+        // Yeni slotu select et
+        Animator animator = slotTransform.GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.SetTrigger("Select");
+        }
+
+        // Slot içeriğini kontrol et (mevcut mantığın aynısı)
         if (slotTransform.childCount > 0)
         {
             Transform _item = slotTransform.GetChild(0);
@@ -129,6 +165,46 @@ public class PlayerActionManager : MonoBehaviour
         {
             _axe = false;
             _pickaxe = false;
+        }
+
+        // Son seçili olarak kaydet
+        _lastSelectedSlotIndex = _slotIndex;
+    }
+
+    public void RecheckSlots()
+    {
+        for (int i = 0; i < _inventoryUI._slotParents.Count; i++)
+        {
+            Transform slotTransform = _inventoryUI._slotParents[i];
+
+            if (slotTransform.childCount > 0)
+            {
+                Transform _item = slotTransform.GetChild(0);
+                string _itemName = _item.name;
+
+                Debug.Log(_itemName);
+
+                if (_itemName == "Axe")
+                {
+                    _axe = true;
+                    _pickaxe = false;
+                }
+                else if (_itemName == "Pickaxe")
+                {
+                    _pickaxe = true;
+                    _axe = false;
+                }
+                else
+                {
+                    _axe = false;
+                    _pickaxe = false;
+                }
+            }
+            else
+            {
+                _axe = false;
+                _pickaxe = false;
+            }
         }
     }
 
