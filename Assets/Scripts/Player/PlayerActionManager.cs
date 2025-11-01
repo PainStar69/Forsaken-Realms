@@ -239,6 +239,10 @@ public class PlayerActionManager : MonoBehaviour
         parent.GetComponent<Shake>().ShakeStart();
 
         var treeChop = parent.Find("TreeChop").GetComponent<ObjectManager>();
+        Transform treeChopTransform = treeChop.transform;
+
+        Transform _firstChild = treeChopTransform.GetChild(0);
+        Transform _secondChild = treeChopTransform.GetChild(1);
 
         if (treeChop._objectHealth <= 1)
         {
@@ -253,7 +257,14 @@ public class PlayerActionManager : MonoBehaviour
 
         if (treeChop._objectHealth <= 0)
         {
-            treeChop.GetComponent<Animator>().SetTrigger("Chop");
+            if(_firstChild.GetComponent<ReverseTree>()._right == true)
+            {
+                treeChop.GetComponent<Animator>().SetTrigger("ChopLeft");
+            }
+            else if(_secondChild.GetComponent<ReverseTree>()._left == true)
+            {
+                treeChop.GetComponent<Animator>().SetTrigger("ChopRight");
+            } 
         }
 
         _audioSource.clip = _clips[0];
