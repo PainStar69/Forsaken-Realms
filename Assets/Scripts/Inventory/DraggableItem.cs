@@ -30,6 +30,8 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         Debug.Log("End Drag");
         transform.SetParent(_parentAfterDrag);
+        gameObject.transform.localScale = new Vector2(1, 1f);
+
         _img.raycastTarget = true;
 
         GameObject _InventoryRecheck = GameObject.Find("Player");

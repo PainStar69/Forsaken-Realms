@@ -114,7 +114,6 @@ public class PlayerActionManager : MonoBehaviour
                 sameAnim.SetTrigger("Deselect");
             }
 
-            // istenirse aynı slot tekrar tıklanınca ekipman da kaldırılabilir:
             _axe = false;
             _pickaxe = false;
 
@@ -140,7 +139,7 @@ public class PlayerActionManager : MonoBehaviour
             animator.SetTrigger("Select");
         }
 
-        // Slot içeriğini kontrol et (mevcut mantığın aynısı)
+        // Slot içeriğini kontrol et
         if (slotTransform.childCount > 0)
         {
             Transform _item = slotTransform.GetChild(0);

@@ -3,7 +3,7 @@ guid: 21b0c900fbabb5848b18e4247f937028
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -67,7 +67,7 @@ TextureImporter:
   swizzle: 50462976
   cookieLightType: 0
   platformSettings:
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -80,7 +80,7 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -93,8 +93,21 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -108,8 +121,1461 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 550
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32095501a84e5b741817ce9987098142
+      internalID: -323764432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_1
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 541
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28b4fb36851bc554498bb89b520775bf
+      internalID: 196472275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_2
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 542
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8567b411e4c082e4e958dab719f48fff
+      internalID: -1279816143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_3
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 554
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 587748bc1edbc7340ab4045aadfeb258
+      internalID: 1585679962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_4
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 557
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ccebd12cc8058249997e726377f5233
+      internalID: 565607245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_5
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 542
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8839bd2b1f4f4e24782d73b5449a2354
+      internalID: 2009974302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_6
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 509
+        width: 4
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 298ed2158138c4747b79d37b9aef39f2
+      internalID: 1888064880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_7
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 451
+        width: 14
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7541b384066d25b44a81ae00c97be432
+      internalID: -1254943181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_8
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 452
+        width: 14
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a0f3ec20d8d10f498329e926bd82a3a
+      internalID: 613525842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_9
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 502
+        width: 4
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2580dd02f15236a4fa13aae154414b1c
+      internalID: 1570699843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_10
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 507
+        width: 4
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84a879f1fde31a24f9e49af60eb76c34
+      internalID: -17175580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_11
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 462
+        width: 4
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecb7109da73167543a96fc4fe676aa88
+      internalID: -723006243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_12
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 451
+        width: 14
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11d60cdc190183544a6391554e7e0af0
+      internalID: -1096628612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_13
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 463
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99764661b21dfb64b808956591f87dab
+      internalID: 930914528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_14
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 463
+        width: 4
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce252edc516fa4040af6ce384ea99348
+      internalID: 1312225813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_15
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 402
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dc95b91acce22945b45dcd26a630963
+      internalID: 1451900673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_16
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 353
+        width: 65
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2a67bbf4286ad943a0c18831b1e331b
+      internalID: -2115130733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_17
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 395
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e137983cf09df840871b402e1014509
+      internalID: -1569132854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_18
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 404
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c63408ebfa8d154da0fde87baf4f789
+      internalID: -1942315257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_19
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 394
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 956f0059669c0f54f8bbfa6e75fda1c7
+      internalID: -367224257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_20
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 391
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c66194e2d90de3643a3164c65314c5d1
+      internalID: 1680220099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_21
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 360
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a20c79c1ac61edf42b654fa753afb97a
+      internalID: 1932643079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_22
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 359
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd5cacb581d0a2c4f93231912f4c43ea
+      internalID: 116691320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_23
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 341
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fa2d9a877b5861488a24cebfc03adc9
+      internalID: 675791861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_24
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 342
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b29ae53143ff15849ab0e46552b22d82
+      internalID: 1592917851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_25
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 343
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5454170ec285c0f4283911ba65a7d79f
+      internalID: -753673191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_26
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 345
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec4e5293065209c46a470601d8e8991d
+      internalID: 1226076117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_27
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 296
+        width: 16
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c1284f91e0f6204f86993e65c70554d
+      internalID: 1831216629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_28
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 300
+        width: 13
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4429314220219d54c88dc055151d41e1
+      internalID: -1973379429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_29
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 322
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cbde2a87ad973640b725baa7c326f71
+      internalID: -617060863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_30
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 317
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cced712b931ce55469c3777b20c4bd1e
+      internalID: -1945451447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_31
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 295
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbcd3e9af16770048a55d462e80b2355
+      internalID: -1168232160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_32
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 304
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f722db224e9f52e49a3269dc84eafa93
+      internalID: 1111593554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_33
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 262
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bfa7bf98c12acb4f8f0d36b50fff727
+      internalID: -407587090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_34
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 254
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00d6708139878bd48a538572a7c75bb4
+      internalID: 1308645417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_35
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 255
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01ccc7ad59547c341bb8647981620ba4
+      internalID: 1147548136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_36
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 266
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35776efe2b527ea41811c164c090027f
+      internalID: 1966421580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_37
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 269
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daed288ee10068147a771848ac136a01
+      internalID: -388751082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_38
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 255
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5adc5cca6c468e3428485f569223f265
+      internalID: -1468228596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_39
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 221
+        width: 4
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 899821038dd44b04287fe58b5eb7351f
+      internalID: -1841020385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_40
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 163
+        width: 14
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e953af925b5f82a4aa0a90a2cd3e6d27
+      internalID: -1737443003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_41
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 164
+        width: 14
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 055b0d3538af2164896eb7c1b5c4598e
+      internalID: 55998584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_42
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 214
+        width: 4
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 125064ee83ca5fc41ada1d65ce506dca
+      internalID: -186548580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_43
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 219
+        width: 4
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2f11aae26c30ee4983876734ca1e97f
+      internalID: 1424177991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_44
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 174
+        width: 4
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1660c1af7b3ae342b057dbaaaaa862b
+      internalID: 1056659841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_45
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 161
+        width: 14
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1a18c8249436a6488d3ca1f9bb2b784
+      internalID: 1528011331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_46
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 175
+        width: 4
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc3982b122f3b8145af39ead3d0e005b
+      internalID: 668741435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_47
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 175
+        width: 4
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abb4a86ae79ad3c4680c827264bd38b6
+      internalID: 1335317268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_48
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 110
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23e7e901156d398429251dda74d2f8c9
+      internalID: -563564690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_49
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 67
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c8658fac8a71e24ab420037fb223a5a
+      internalID: 2015933573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_50
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 108
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fccad8ff62fc81449a4029b8a933b775
+      internalID: 1760551602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_51
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 64
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f7a02b6c0ff05a4cb70134d5b553926
+      internalID: -627205167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_52
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 65
+        width: 16
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d9475b41dbdb9845827e336e9e99fa1
+      internalID: -1650949165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_53
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 111
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dc3bf85a954218439f47668d0babcbd
+      internalID: -391752667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_54
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 78
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04c253f4fc6a69a419bdc1f8bdc410bd
+      internalID: -700937999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_55
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 65
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 757be9b46be2310418903ba298fc3b09
+      internalID: -1146629935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_56
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 111
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 091e012fae99b284cbbe1e2add034f10
+      internalID: -1951096405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_57
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 78
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c44bbff437a9eb14886cd6dd91c8eee8
+      internalID: 740397174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_58
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 65
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac48ca1827e8f174c83cba70c4e39942
+      internalID: 1435520640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_59
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 65
+        width: 23
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd4bedda5b11a7042951c796b9abdf32
+      internalID: -1125786601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_60
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 16
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 136d1d2d9c705374fbe621be74930a70
+      internalID: -1333565288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_61
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 13
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fa5277d042324b40821a50d36ae37c9
+      internalID: 627939853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_62
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 16
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18d8f0d427c903543992db7e9b623001
+      internalID: 1314491993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_63
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 16
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1be7802a5d16124bb8846125c928b5b
+      internalID: 1839794926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_64
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 16
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d0bc2e739747664787d8424e6dbe598
+      internalID: 1072146214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Non_Player_Actions 1_65
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 16
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36b27b7b8a3e3324b8b21df086844162
+      internalID: 334628128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
+    customData: 
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
@@ -119,7 +1585,79 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceOnImport
+        value: False
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Non_Player_Actions 1_0: -323764432
+      Non_Player_Actions 1_1: 196472275
+      Non_Player_Actions 1_10: -17175580
+      Non_Player_Actions 1_11: -723006243
+      Non_Player_Actions 1_12: -1096628612
+      Non_Player_Actions 1_13: 930914528
+      Non_Player_Actions 1_14: 1312225813
+      Non_Player_Actions 1_15: 1451900673
+      Non_Player_Actions 1_16: -2115130733
+      Non_Player_Actions 1_17: -1569132854
+      Non_Player_Actions 1_18: -1942315257
+      Non_Player_Actions 1_19: -367224257
+      Non_Player_Actions 1_2: -1279816143
+      Non_Player_Actions 1_20: 1680220099
+      Non_Player_Actions 1_21: 1932643079
+      Non_Player_Actions 1_22: 116691320
+      Non_Player_Actions 1_23: 675791861
+      Non_Player_Actions 1_24: 1592917851
+      Non_Player_Actions 1_25: -753673191
+      Non_Player_Actions 1_26: 1226076117
+      Non_Player_Actions 1_27: 1831216629
+      Non_Player_Actions 1_28: -1973379429
+      Non_Player_Actions 1_29: -617060863
+      Non_Player_Actions 1_3: 1585679962
+      Non_Player_Actions 1_30: -1945451447
+      Non_Player_Actions 1_31: -1168232160
+      Non_Player_Actions 1_32: 1111593554
+      Non_Player_Actions 1_33: -407587090
+      Non_Player_Actions 1_34: 1308645417
+      Non_Player_Actions 1_35: 1147548136
+      Non_Player_Actions 1_36: 1966421580
+      Non_Player_Actions 1_37: -388751082
+      Non_Player_Actions 1_38: -1468228596
+      Non_Player_Actions 1_39: -1841020385
+      Non_Player_Actions 1_4: 565607245
+      Non_Player_Actions 1_40: -1737443003
+      Non_Player_Actions 1_41: 55998584
+      Non_Player_Actions 1_42: -186548580
+      Non_Player_Actions 1_43: 1424177991
+      Non_Player_Actions 1_44: 1056659841
+      Non_Player_Actions 1_45: 1528011331
+      Non_Player_Actions 1_46: 668741435
+      Non_Player_Actions 1_47: 1335317268
+      Non_Player_Actions 1_48: -563564690
+      Non_Player_Actions 1_49: 2015933573
+      Non_Player_Actions 1_5: 2009974302
+      Non_Player_Actions 1_50: 1760551602
+      Non_Player_Actions 1_51: -627205167
+      Non_Player_Actions 1_52: -1650949165
+      Non_Player_Actions 1_53: -391752667
+      Non_Player_Actions 1_54: -700937999
+      Non_Player_Actions 1_55: -1146629935
+      Non_Player_Actions 1_56: -1951096405
+      Non_Player_Actions 1_57: 740397174
+      Non_Player_Actions 1_58: 1435520640
+      Non_Player_Actions 1_59: -1125786601
+      Non_Player_Actions 1_6: 1888064880
+      Non_Player_Actions 1_60: -1333565288
+      Non_Player_Actions 1_61: 627939853
+      Non_Player_Actions 1_62: 1314491993
+      Non_Player_Actions 1_63: 1839794926
+      Non_Player_Actions 1_64: 1072146214
+      Non_Player_Actions 1_65: 334628128
+      Non_Player_Actions 1_7: -1254943181
+      Non_Player_Actions 1_8: 613525842
+      Non_Player_Actions 1_9: 1570699843
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
