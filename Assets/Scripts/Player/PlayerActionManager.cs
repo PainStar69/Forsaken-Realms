@@ -21,6 +21,7 @@ public class PlayerActionManager : MonoBehaviour
     [Header("Bool's")]
     public bool _axe;
     public bool _pickaxe;
+    public bool _sword;
 
     [Header("Float's")]
     public float _detectDistance = 1f;
@@ -89,6 +90,11 @@ public class PlayerActionManager : MonoBehaviour
             _anim.SetTrigger("Pickaxe");
             PlayerMovement.moveSpeed = 0;
         }
+        else if(_sword)
+        {
+            _anim.SetTrigger("Sword");
+            PlayerMovement.moveSpeed = 0;
+        }
     }
 
     private int _lastSelectedSlotIndex = -1;
@@ -145,26 +151,36 @@ public class PlayerActionManager : MonoBehaviour
             Transform _item = slotTransform.GetChild(0);
             string _itemName = _item.name;
 
-            if (_itemName == "Axe")
+            if (_itemName.Contains("Axe"))
             {
                 _axe = true;
                 _pickaxe = false;
+                _sword = false;
             }
-            else if (_itemName == "Pickaxe")
+            else if (_itemName.Contains("Pickaxe"))
             {
                 _pickaxe = true;
                 _axe = false;
+                _sword = false;
+            }
+            else if (_itemName.Contains("Sword"))
+            {
+                _sword = true;
+                _axe = false;
+                _pickaxe = false;
             }
             else
             {
                 _axe = false;
                 _pickaxe = false;
+                _sword = false;
             }
         }
         else
         {
             _axe = false;
             _pickaxe = false;
+            _sword = false;
         }
 
         // Son seçili olarak kaydet
@@ -186,22 +202,32 @@ public class PlayerActionManager : MonoBehaviour
             {
                 _axe = true;
                 _pickaxe = false;
+                _sword = false;
             }
             else if (_itemName.Contains("Pickaxe"))
             {
                 _pickaxe = true;
                 _axe = false;
+                _sword = false;
+            }
+            else if(_itemName.Contains("Sword"))
+            {
+                _sword = true;
+                _axe = false;
+                _pickaxe = false;
             }
             else
             {
                 _axe = false;
                 _pickaxe = false;
+                _sword = false;
             }
         }
         else
         {
             _axe = false;
             _pickaxe = false;
+            _sword = false;
         }
     }
 

@@ -9,6 +9,7 @@ public class PlayerBehaviour : StateMachineBehaviour
     {
         animator.ResetTrigger("Axe");
         animator.ResetTrigger("Pickaxe");
+        animator.ResetTrigger("Sword");
         PlayerMovement.moveSpeed = 7;
     }
 

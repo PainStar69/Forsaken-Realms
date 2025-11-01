@@ -30,7 +30,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         Debug.Log("End Drag");
         transform.SetParent(_parentAfterDrag);
-        gameObject.transform.localScale = new Vector2(1, 1f);
+        gameObject.transform.localScale = new Vector2(1, 1);
 
         _img.raycastTarget = true;
 

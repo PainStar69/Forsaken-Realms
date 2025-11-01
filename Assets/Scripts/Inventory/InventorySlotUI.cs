@@ -25,7 +25,7 @@ public class InventorySlotUI : MonoBehaviour, IDropHandler
             _draggableItem._parentAfterDrag = transform;
 
             _existingItem.SetParent(_originalParent);
-            _existingItem.localPosition = Vector3.zero;
+            _existingItem.localScale = new Vector2(1, 1);
         }
     }
 }
