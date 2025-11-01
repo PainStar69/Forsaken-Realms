@@ -92,13 +92,14 @@ public class PlayerActionManager : MonoBehaviour
     }
 
     private int _lastSelectedSlotIndex = -1;
+    private int _slotIndex;
 
     private void OnAlphaButtonClick(InputAction.CallbackContext _ctx)
     {
         var _control = _ctx.control;
 
         if (!int.TryParse(_control.name, out int num)) return;
-        int _slotIndex = num - 1;
+        _slotIndex = num - 1;
 
         if (_slotIndex < 0 || _slotIndex >= _inventoryUI._slotParents.Count) return;
 
@@ -173,38 +174,35 @@ public class PlayerActionManager : MonoBehaviour
 
     public void RecheckSlots()
     {
-        for (int i = 0; i < _inventoryUI._slotParents.Count; i++)
+        Transform slotTransform = _inventoryUI._slotParents[_slotIndex];
+
+        if (slotTransform.childCount > 0)
         {
-            Transform slotTransform = _inventoryUI._slotParents[i];
+            Transform _item = slotTransform.GetChild(0);
+            string _itemName = _item.name;
 
-            if (slotTransform.childCount > 0)
+            Debug.Log(_itemName);
+
+            if (_itemName.Contains("Axe"))
             {
-                Transform _item = slotTransform.GetChild(0);
-                string _itemName = _item.name;
-
-                Debug.Log(_itemName);
-
-                if (_itemName == "Axe")
-                {
-                    _axe = true;
-                    _pickaxe = false;
-                }
-                else if (_itemName == "Pickaxe")
-                {
-                    _pickaxe = true;
-                    _axe = false;
-                }
-                else
-                {
-                    _axe = false;
-                    _pickaxe = false;
-                }
+                _axe = true;
+                _pickaxe = false;
+            }
+            else if (_itemName.Contains("Pickaxe"))
+            {
+                _pickaxe = true;
+                _axe = false;
             }
             else
             {
                 _axe = false;
                 _pickaxe = false;
             }
+        }
+        else
+        {
+            _axe = false;
+            _pickaxe = false;
         }
     }
 

@@ -28,6 +28,7 @@ public class Inventory : MonoBehaviour
         if (Instance == null) Instance = this;
     }
 
+    [System.Obsolete]
     public bool AddItem(ItemData _newItem, int _amount)
     {
         if (_newItem._isStackable)
@@ -53,6 +54,7 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
+    [System.Obsolete]
     public void UpdateUI()
     {
         //Bütün ayný UI ve tekli UI'larý Scriptinden çaðýrýyoruz

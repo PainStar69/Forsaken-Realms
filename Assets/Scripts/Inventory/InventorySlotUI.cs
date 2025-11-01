@@ -33,5 +33,7 @@ public class InventorySlotUI : MonoBehaviour, IDropHandler
 
             _InventoryRecheck.GetComponent<PlayerActionManager>().RecheckSlots();
         }
+
+        _InventoryRecheck.GetComponent<PlayerActionManager>().RecheckSlots();
     }
 }

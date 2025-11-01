@@ -31,5 +31,8 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         Debug.Log("End Drag");
         transform.SetParent(_parentAfterDrag);
         _img.raycastTarget = true;
+
+        GameObject _InventoryRecheck = GameObject.Find("Player");
+        _InventoryRecheck.GetComponent<PlayerActionManager>().RecheckSlots();
     }
 }
