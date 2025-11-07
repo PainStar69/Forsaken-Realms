@@ -328,12 +328,6 @@ public class PlayerActionManager : MonoBehaviour
         _audioSource.Play();
     }
 
-    IEnumerator Refreshed()
-    {
-        yield return new WaitForSeconds(.1f);
-        gameObject.GetComponent<PlayerMovement>().moveInput.x = 0;
-    }
-
     private void HandleRockHit(RaycastHit2D _hit)
     {
         var _parent = _hit.collider.transform.parent;
@@ -341,6 +335,9 @@ public class PlayerActionManager : MonoBehaviour
         _parent.GetComponent<Shake>().ShakeStart();
 
         var rockManager = _parent.GetComponent<ObjectManager>();
+
+        var _firstChild = _hit.collider.transform.GetChild(0);
+        var _secondChild = _hit.collider.transform.GetChild(1);
 
         if (rockManager._objectHealth <= 0)
         {
@@ -354,8 +351,25 @@ public class PlayerActionManager : MonoBehaviour
 
         rockManager.ObjectTakeDamage(1);
 
+        if (_firstChild.GetComponent<ReverseTree>()._right == true)
+        {
+            gameObject.GetComponent<PlayerMovement>().moveInput.x = -1;
+            StartCoroutine(Refreshed());
+        }
+        else if (_secondChild.GetComponent<ReverseTree>()._left == true)
+        {
+            gameObject.GetComponent<PlayerMovement>().moveInput.x = 1;
+            StartCoroutine(Refreshed());
+        }
+
         _audioSource.clip = _clips[1];
         _audioSource.Play();
+    }
+
+    IEnumerator Refreshed()
+    {
+        yield return new WaitForSeconds(.1f);
+        gameObject.GetComponent<PlayerMovement>().moveInput.x = 0;
     }
 
     #endregion
