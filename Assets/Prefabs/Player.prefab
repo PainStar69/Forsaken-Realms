@@ -73,7 +73,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 63
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -129,14 +129,14 @@ MonoBehaviour:
   m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
-  m_Version: 2
   m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+  m_Version: 2
 --- !u!1 &1364600675947740956
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,6 +228,11 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -249,6 +254,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
@@ -265,7 +271,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!50 &3375193907061932970
 Rigidbody2D:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -276,8 +282,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -302,6 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7960be19c8da1d4aa7e57887295399c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveInput: {x: 0, y: 0}
 --- !u!114 &5505470166306857415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,6 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f26d18dac5bb23429359a0a7f2cb9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mainCam: {fileID: 7171564532794868133}
   _inventoryUI: {fileID: 0}
   _clips:
   - {fileID: 8300000, guid: 49bf1adcee0a4f64583b0e931f953a58, type: 3}
@@ -333,7 +341,9 @@ MonoBehaviour:
   _rockParticle: {fileID: 2928535341843340010, guid: 63ba3c72d82b83c4594122e691221cf8, type: 3}
   _axe: 0
   _pickaxe: 0
+  _sword: 0
   _detectDistance: 1
+  _dist: 0
   _objectLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -384,7 +394,7 @@ MonoBehaviour:
   m_Camera: {fileID: 0}
 --- !u!95 &7465658940018616685
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -398,6 +408,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -411,6 +422,7 @@ BoxCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1819319613444572173}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -434,7 +446,8 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: -0.027523994, y: -0.37512982}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -445,7 +458,6 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
   m_Size: {x: 0.56052494, y: 0.1946485}
   m_EdgeRadius: 0
 --- !u!82 &720273294462058915
@@ -459,6 +471,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

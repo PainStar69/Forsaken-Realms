@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator _anim;
 
     [Header("Vector's")]
-    private Vector2 moveInput;
+    public Vector2 moveInput;
 
     private void Awake()
     {

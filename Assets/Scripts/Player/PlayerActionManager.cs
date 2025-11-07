@@ -1,4 +1,5 @@
-﻿using UnityEditor.ShaderGraph;
+﻿using System.Collections;
+using UnityEditor.ShaderGraph;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,6 +11,11 @@ public class PlayerActionManager : MonoBehaviour
     [Header("Component's")]
     Animator _anim;
     AudioSource _audioSource;
+
+    [Header("Camera's")]
+    public Camera _mainCam;
+
+    [Header("Script's")]
     public InventoryUI _inventoryUI;
 
     [Header("MP3")]
@@ -25,6 +31,7 @@ public class PlayerActionManager : MonoBehaviour
 
     [Header("Float's")]
     public float _detectDistance = 1f;
+    [SerializeField] private float _dist;
 
     [Header("LayerMask's")]
     public LayerMask _objectLayer;
@@ -38,7 +45,11 @@ public class PlayerActionManager : MonoBehaviour
         _inputAction = new PlayerControls();
         _anim = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
+
+        _mainCam = Camera.main;
     }
+
+    #region InputSystem
 
     private void OnEnable()
     {
@@ -90,7 +101,7 @@ public class PlayerActionManager : MonoBehaviour
             _anim.SetTrigger("Pickaxe");
             PlayerMovement.moveSpeed = 0;
         }
-        else if(_sword)
+        else if (_sword)
         {
             _anim.SetTrigger("Sword");
             PlayerMovement.moveSpeed = 0;
@@ -231,37 +242,45 @@ public class PlayerActionManager : MonoBehaviour
         }
     }
 
+    #endregion
+
     // Object Detection
     public void DetectObjectInFront()
     {
-        Vector2 _rayOrigin = (Vector2)transform.position + _lookDirection * 0.3f;
+        var _ray = _mainCam.ScreenPointToRay(Mouse.current.position.ReadValue());
+        var _hit = Physics2D.GetRayIntersection(_ray, Mathf.Infinity, _objectLayer);
 
-        RaycastHit2D _hit = Physics2D.Raycast(_rayOrigin, _lookDirection, _detectDistance, _objectLayer);
-
-        Debug.DrawRay(_rayOrigin, _lookDirection * _detectDistance, Color.red, 0.1f);
-
-        if (_hit.collider != null)
+        if (!_hit.collider) return;
+        if(_hit.collider.gameObject.name == "AxeCollision" && _axe)
         {
-            if (_hit.collider.CompareTag("Tree") && _axe)
-            {
-                HandleTreeHit(_hit);
-            }
-            else if (_hit.collider.CompareTag("Rock") && _pickaxe)
-            {
-                HandleRockHit(_hit);
-            }
+            _dist = Vector2.Distance(_hit.collider.gameObject.transform.position, transform.position);
+
+            if(_dist < 1.2f)
+            HandleTreeHit(_hit);
+        }
+        else if(_hit.collider.gameObject.name == "PickaxeCollision" && _pickaxe)
+        {
+            _dist = Vector2.Distance(_hit.collider.gameObject.transform.position, transform.position);
+
+            if (_dist < 1.2f)
+            HandleRockHit(_hit);
+        }
+        else
+        {
+            Debug.Log(_hit.collider.gameObject.name);
         }
     }
 
-    // Private helpers
+    #region Private Regions
+
     private void HandleTreeHit(RaycastHit2D _hit)
     {
-        var parent = _hit.collider.transform.parent;
+        var _parent = _hit.collider.transform.parent;
 
-        ParticleSystem _treeParticle = parent.Find("TreeParticle").GetComponent<ParticleSystem>();
-        parent.GetComponent<Shake>().ShakeStart();
+        ParticleSystem _treeParticle = _parent.Find("TreeParticle").GetComponent<ParticleSystem>();
+        _parent.GetComponent<Shake>().ShakeStart();
 
-        var treeChop = parent.Find("TreeChop").GetComponent<ObjectManager>();
+        var treeChop = _parent.Find("TreeChop").GetComponent<ObjectManager>();
         Transform treeChopTransform = treeChop.transform;
 
         Transform _firstChild = treeChopTransform.GetChild(0);
@@ -278,6 +297,17 @@ public class PlayerActionManager : MonoBehaviour
 
         treeChop.ObjectTakeDamage(1);
 
+        if(_firstChild.GetComponent<ReverseTree>()._right == true)
+        {
+            gameObject.GetComponent<PlayerMovement>().moveInput.x = -1;
+            StartCoroutine(Refreshed());
+        }
+        else if (_secondChild.GetComponent<ReverseTree>()._left == true)
+        {
+            gameObject.GetComponent<PlayerMovement>().moveInput.x = 1;
+            StartCoroutine(Refreshed());
+        }
+
         if (treeChop._objectHealth <= 0)
         {
             if(_firstChild.GetComponent<ReverseTree>()._right == true)
@@ -287,20 +317,30 @@ public class PlayerActionManager : MonoBehaviour
             else if(_secondChild.GetComponent<ReverseTree>()._left == true)
             {
                 treeChop.GetComponent<Animator>().SetTrigger("ChopRight");
-            } 
+            }
+            else
+            {
+                treeChop.GetComponent<Animator>().SetTrigger("ChopRight");
+            }
         }
 
         _audioSource.clip = _clips[0];
         _audioSource.Play();
     }
 
+    IEnumerator Refreshed()
+    {
+        yield return new WaitForSeconds(.1f);
+        gameObject.GetComponent<PlayerMovement>().moveInput.x = 0;
+    }
+
     private void HandleRockHit(RaycastHit2D _hit)
     {
-        var parent = _hit.collider.transform.parent;
+        var _parent = _hit.collider.transform.parent;
 
-        parent.GetComponent<Shake>().ShakeStart();
+        _parent.GetComponent<Shake>().ShakeStart();
 
-        var rockManager = parent.GetComponent<ObjectManager>();
+        var rockManager = _parent.GetComponent<ObjectManager>();
 
         if (rockManager._objectHealth <= 0)
         {
@@ -317,4 +357,6 @@ public class PlayerActionManager : MonoBehaviour
         _audioSource.clip = _clips[1];
         _audioSource.Play();
     }
+
+    #endregion
 }
