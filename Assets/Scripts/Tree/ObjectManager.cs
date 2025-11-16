@@ -8,6 +8,7 @@ public class ObjectManager : MonoBehaviour
     [Header("GameObject's")]
     public GameObject[] _dropItems;
     public GameObject _breakObject;
+    public GameObject _outline;
 
     [Header("Int's")]
     public int _objectHealth = 3;
@@ -26,9 +27,15 @@ public class ObjectManager : MonoBehaviour
         if(_objectHealth <= 0)
         {
             if (!_animationActive)
+            {
+                Destroy(_outline);
                 DropItem();
+            }
             else
+            {
+                Destroy(_outline);
                 _animActive = true;
+            }
         }
     }
 

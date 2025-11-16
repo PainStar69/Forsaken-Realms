@@ -336,8 +336,8 @@ public class PlayerActionManager : MonoBehaviour
 
         var rockManager = _parent.GetComponent<ObjectManager>();
 
-        var _firstChild = _hit.collider.transform.GetChild(0);
-        var _secondChild = _hit.collider.transform.GetChild(1);
+        var _firstChild = _hit.collider.transform.GetChild(1);
+        var _secondChild = _hit.collider.transform.GetChild(2);
 
         if (rockManager._objectHealth <= 0)
         {
