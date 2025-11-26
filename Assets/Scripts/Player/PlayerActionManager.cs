@@ -31,7 +31,7 @@ public class PlayerActionManager : MonoBehaviour
 
     [Header("Float's")]
     public float _detectDistance = 1f;
-    [SerializeField] private float _dist;
+    public float _dist;
 
     [Header("LayerMask's")]
     public LayerMask _objectLayer;
