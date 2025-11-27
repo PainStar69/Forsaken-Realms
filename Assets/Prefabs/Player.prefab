@@ -571,3 +571,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MouseFactor
   targetLayerName: ObjectLayer
+  player: {fileID: 271459374590997525}
+  maxDistance: 1.2
