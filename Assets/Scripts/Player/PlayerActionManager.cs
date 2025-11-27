@@ -133,6 +133,7 @@ public class PlayerActionManager : MonoBehaviour
 
             _axe = false;
             _pickaxe = false;
+            _sword = false;
 
             _lastSelectedSlotIndex = -1;
             return;
