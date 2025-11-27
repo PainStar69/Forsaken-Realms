@@ -3,77 +3,73 @@ using UnityEngine.InputSystem;
 
 public class MouseFactor : MonoBehaviour
 {
-    public string targetLayerName;
-    private int layerMask;
+    public string _targetLayerName;
+    private int _layerMask;
 
-    private GameObject lastActiveChild;
+    private GameObject _lastActiveChild;
 
-    public Transform player;   // Mesafe için oyuncu transformu
-    public float maxDistance = 1.2f;
+    public Transform _player;
+    public float _maxDistance = 1.2f;
 
     void Start()
     {
-        layerMask = LayerMask.GetMask(targetLayerName);
+        _layerMask = LayerMask.GetMask(_targetLayerName);
     }
 
     void Update()
     {
-        // Destroy edilen objeyi temizle
-        if (lastActiveChild == null)
-            lastActiveChild = null;
+        if (_lastActiveChild == null)
+            _lastActiveChild = null;
 
-        Vector2 mousePosScreen = Mouse.current.position.ReadValue();
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(mousePosScreen);
+        Vector2 _mousePosScreen = Mouse.current.position.ReadValue();
+        Vector2 _mousePos = Camera.main.ScreenToWorldPoint(_mousePosScreen);
 
-        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, 0f, layerMask);
+        RaycastHit2D _hit = Physics2D.Raycast(_mousePos, Vector2.zero, 0f, _layerMask);
 
-        if (hit.collider != null)
+        if (_hit.collider != null)
         {
-            // --- MESAFE KONTROLÜ ---
-            float dist = Vector2.Distance(player.position, hit.collider.transform.position);
-            if (dist > maxDistance)
+            float dist = Vector2.Distance(_player.position, _hit.collider.transform.position);
+            if (dist > _maxDistance)
             {
-                // Uzaksa outline'ý kapat
-                if (lastActiveChild != null)
+                if (_lastActiveChild != null)
                 {
-                    lastActiveChild.SetActive(false);
-                    lastActiveChild = null;
+                    _lastActiveChild.SetActive(false);
+                    _lastActiveChild = null;
                 }
                 return;
             }
-            // -----------------------
 
-            Transform child = hit.collider.transform.childCount > 0
-                ? hit.collider.transform.GetChild(0)
+            Transform _child = _hit.collider.transform.childCount > 0
+                ? _hit.collider.transform.GetChild(0)
                 : null;
 
-            if (child != null)
+            if (_child != null)
             {
-                if (lastActiveChild != null && lastActiveChild != child.gameObject)
+                if (_lastActiveChild != null && _lastActiveChild != _child.gameObject)
                 {
-                    if (lastActiveChild != null)
-                        lastActiveChild.SetActive(false);
+                    if (_lastActiveChild != null)
+                        _lastActiveChild.SetActive(false);
                 }
 
-                if (child.gameObject != lastActiveChild)
+                if (_child.gameObject != _lastActiveChild)
                 {
-                    child.gameObject.SetActive(true);
-                    lastActiveChild = child.gameObject;
+                    _child.gameObject.SetActive(true);
+                    _lastActiveChild = _child.gameObject;
                 }
 
                 if (Mouse.current.leftButton.wasPressedThisFrame)
                 {
-                    Debug.Log("Objeye týklandý: " + hit.collider.name);
+                    Debug.Log("Objeye týklandý: " + _hit.collider.name);
                 }
 
                 return;
             }
         }
 
-        if (lastActiveChild != null)
+        if (_lastActiveChild != null)
         {
-            lastActiveChild.SetActive(false);
-            lastActiveChild = null;
+            _lastActiveChild.SetActive(false);
+            _lastActiveChild = null;
         }
     }
 }
