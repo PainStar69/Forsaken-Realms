@@ -1421,10 +1421,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1965575541764521709, guid: 9d421b0c1c08bb64ca2fa9160655e6a4, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4464783596242792201, guid: 9d421b0c1c08bb64ca2fa9160655e6a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.7565603
@@ -1465,17 +1461,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5443268341062150805, guid: 9d421b0c1c08bb64ca2fa9160655e6a4, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6756346820665843448, guid: 9d421b0c1c08bb64ca2fa9160655e6a4, type: 3}
       propertyPath: m_Name
       value: TreeFourBigRelease
-      objectReference: {fileID: 0}
-    - target: {fileID: 7567737616843168350, guid: 9d421b0c1c08bb64ca2fa9160655e6a4, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
